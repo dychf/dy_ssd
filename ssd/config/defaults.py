@@ -83,6 +83,11 @@ _C.SOLVER.WEIGHT_DECAY = 5e-4
 _C.SOLVER.WARMUP_FACTOR = 1.0 / 3
 _C.SOLVER.WARMUP_ITERS = 500
 
+# dychf add
+_C.SOLVER.TAN = False
+_C.SOLVER.A = 0.7
+_C.SOLVER.B = 0.7
+
 # ---------------------------------------------------------------------------- #
 # Specific test options
 # ---------------------------------------------------------------------------- #

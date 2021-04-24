@@ -92,8 +92,8 @@ class SGD_tan(Optimizer):
                 if p.grad is None:
                     continue
                 d_p = p.grad.data
-                if cfg.SOLVER.ues_tan:
-                    d_p = cfg.SOLVER.a * torch.atan(d_p * cfg.SOLVER.b)
+                if cfg.SOLVER.TAN:
+                    d_p = cfg.SOLVER.A * torch.atan(d_p * cfg.SOLVER.B)
                 # d_p = 0.3 * torch.atan(d_p*4.5)
                 # d_p = 0.05 * torch.atan(d_p*1.5)
                 # d_p = 0.7 * torch.atan(d_p*0.7)
