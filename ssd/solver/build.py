@@ -6,9 +6,12 @@ from sgd_tan import SGD_tan
 
 def make_optimizer(cfg, model, lr=None):
     lr = cfg.SOLVER.BASE_LR if lr is None else lr
-    # return torch.optim.SGD(model.parameters(), lr=lr, momentum=cfg.SOLVER.MOMENTUM, weight_decay=cfg.SOLVER.WEIGHT_DECAY)
-    return SGD_tan(model.parameters(), lr=lr, momentum=cfg.SOLVER.MOMENTUM,
-                   weight_decay=cfg.SOLVER.WEIGHT_DECAY)
+    # ori
+    return torch.optim.SGD(model.parameters(), lr=lr, momentum=cfg.SOLVER.MOMENTUM,
+                           weight_decay=cfg.SOLVER.WEIGHT_DECAY)
+    # tan
+    # return SGD_tan(model.parameters(), lr=lr, momentum=cfg.SOLVER.MOMENTUM,
+    #                weight_decay=cfg.SOLVER.WEIGHT_DECAY)
 
 
 def make_lr_scheduler(cfg, optimizer, milestones=None):
