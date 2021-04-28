@@ -134,8 +134,8 @@ def do_train(cfg, model,
                 for loss_name, loss_item in loss_dict_reduced.items():
                     summary_writer.add_scalar('losses/{}'.format(loss_name), loss_item, global_step=global_step)
                 summary_writer.add_scalar('lr', optimizer.param_groups[0]['lr'], global_step=global_step)
-                for name, param in model.named_parameters():  # dychf
-                    summary_writer.add_histogram(name + '/grad', param.grad, global_step=global_step)
+                # for name, param in model.named_parameters():  # dychf
+                #     summary_writer.add_histogram(name + '/grad', param.grad, global_step=global_step)
 
         if iteration % args.save_step == 0:
             checkpointer.save("model_{:06d}".format(iteration), **arguments)
